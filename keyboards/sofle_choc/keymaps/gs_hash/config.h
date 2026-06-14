@@ -24,6 +24,45 @@
 // I've found this helps with some ProMicros where the slave does not boot
 #define SPLIT_USB_DETECT
 
-#define RGB_MATRIX_SLEEP     // turn off effects when suspended
-#define SPLIT_TRANSPORT_MIRROR             // If LED_MATRIX_KEYPRESSES or LED_MATRIX_KEYRELEASES is enabled, you also will want to enable SPLIT_TRANSPORT_MIRROR
-#define RGB_MATRIX_MAXIMUM_BRIGHTNESS 100  // limits maximum brightness of LEDs (max 255). Higher may cause the controller to crash.
+#define RGB_MATRIX_SLEEP       // turn off effects when suspended
+#define SPLIT_TRANSPORT_MIRROR // If LED_MATRIX_KEYPRESSES or LED_MATRIX_KEYRELEASES is enabled, you also will want to enable SPLIT_TRANSPORT_MIRROR
+// --- RGB MATRIX ---
+#define RGB_MATRIX_MAXIMUM_BRIGHTNESS 100 // limits maximum brightness of LEDs (max 255). Higher may cause the controller to crash.
+#define RGB_MATRIX_STARTUP_MODE RGB_MATRIX_SOLID_COLOR
+#define RGB_MATRIX_STARTUP_VAL 60
+
+#define RGB_MATRIX_KEYPRESSES
+#define RGB_DISABLE_WHEN_USB_SUSPENDED
+
+// --- Layer-Tap ---
+#define TAPPING_TERM 250
+#define PERMISSIVE_HOLD
+// #define HOLD_ON_OTHER_KEY_PRESS
+#define COMBO_TERM 60
+#define COMBO_ONLY_FROM_LAYER 0
+
+// Wyłącz animacje
+#define RGB_MATRIX_EFFECTS
+#define ENABLE_RGB_MATRIX_ALPHAS_MODS
+#define ENABLE_RGB_MATRIX_GRADIENT_LEFT_RIGHT
+
+// wyłącz WSZYSTKO co się da
+// #define DISABLE_RGB_MATRIX_ALPHAS_MODS
+// #define DISABLE_RGB_MATRIX_GRADIENT_UP_DOWN
+// #define DISABLE_RGB_MATRIX_GRADIENT_LEFT_RIGHT
+// #define DISABLE_RGB_MATRIX_BREATHING
+// #define DISABLE_RGB_MATRIX_BAND_SAT
+// #define DISABLE_RGB_MATRIX_BAND_VAL
+// #define DISABLE_RGB_MATRIX_BAND_PINWHEEL_SAT
+// #define DISABLE_RGB_MATRIX_BAND_PINWHEEL_VAL
+// #define DISABLE_RGB_MATRIX_BAND_SPIRAL_SAT
+// #define DISABLE_RGB_MATRIX_BAND_SPIRAL_VAL
+// #define DISABLE_RGB_MATRIX_CYCLE_ALL
+// #define DISABLE_RGB_MATRIX_CYCLE_LEFT_RIGHT
+// #define DISABLE_RGB_MATRIX_CYCLE_UP_DOWN
+// #define DISABLE_RGB_MATRIX_RAINBOW_MOVING_CHEVRON
+// #define DISABLE_RGB_MATRIX_RAINBOW_PINWHEELS
+// #define DISABLE_RGB_MATRIX_JELLYBEAN_RAINDROPS
+// #define DISABLE_RGB_MATRIX_PIXEL_RAIN
+// #define DISABLE_RGB_MATRIX_PIXEL_FLOW
+// #define DISABLE_RGB_MATRIX_PIXEL_FRACTAL
