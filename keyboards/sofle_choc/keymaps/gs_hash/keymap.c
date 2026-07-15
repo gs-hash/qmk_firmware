@@ -18,8 +18,8 @@
 #include QMK_KEYBOARD_H
 #include "rgb_matrix.h"
 
-#define OFS MT(KC_RSFT,KC_F)
-#define OJS MT(KC_RSFT,KC_J)
+#define OFS MT(MOD_RSFT,KC_F)
+#define OJS MT(MOD_RSFT,KC_J)
 
 enum layers {
     _BASE = 0,
@@ -55,17 +55,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|  N/A  |    | N/A   |------+------+------+------+------+------|
  * |LShift|   Z  |   X  |   C  |   V  |   B  |-------|    |-------|   N  |   M  |   ,  |   .  |   /  |RShift|
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *            | _FN2  | GUI  | LALT | LCTL | /Enter  /       \Space \  | RALT | _FN1  | RCTL | GUI  |
- *            |      |      |      |      |/ _SYM  /         \ _NAV \ |      |      |      |      |
+ *            | GUI  | LALT | _SYM | LCTL | /Enter  /       \Space \  | RALT | _FN1  | RCTL | GUI  |
+ *            |      |      |      |      |/       /         \ _NAV \ |      |      |      |      |
 *            `----------------------------------'           '------''---------------------------'
  */
 
 [_BASE] = LAYOUT(
-    KC_GRV,   KC_1,   KC_2,    KC_3,    KC_4,    KC_5,                         KC_6,     KC_7,     KC_8,    KC_9,    KC_0,    KC_MINUS,
+    LT(_FN2,KC_GRV),   KC_1,   KC_2,    KC_3,    KC_4,    KC_5,                         KC_6,     KC_7,     KC_8,    KC_9,    KC_0,    KC_MINUS,
     KC_ESC,   KC_Q,   KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,     KC_U,     KC_I,    KC_O,    KC_P,    KC_BSPC,
     KC_TAB,   KC_A,   KC_S,    KC_D,    OFS,     KC_G,                         KC_H,     OJS,      KC_K,    KC_L,    KC_SCLN, KC_QUOT,
     KC_LSFT,  KC_Z,   KC_X,    KC_C,    KC_V,    KC_B,   KC_NO,      KC_NO,    KC_N,     KC_M,     KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
-                      MO(_FN2), KC_LGUI, KC_LALT, KC_LCTL,  LT(_SYM, KC_ENT),    LT(_NAV, KC_SPC), KC_RALT, MO(_FN1), KC_RCTL, KC_RGUI
+                      KC_LGUI, KC_LALT, MO(_SYM), KC_LCTL,  KC_ENT,    LT(_NAV, KC_SPC), KC_RALT, MO(_FN1), KC_RCTL, KC_RGUI
 ),
 /*
  * QWERTY
